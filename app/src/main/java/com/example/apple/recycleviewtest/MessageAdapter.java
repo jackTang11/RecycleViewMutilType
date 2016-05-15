@@ -32,6 +32,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     String[] paths = new String[]{path1,path2,path3,path4,path5,path6,path7,path8,path9,path10};
 
     private Context mContext;
+    private final int mValues;
+    private final int mWid;
 
 
     public MessageAdapter(Context context) {
@@ -129,6 +131,9 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 //            msg.path =paths[random.nextInt(9)];
 //            mMessages.add(msg);
 //        }
+        mWid = context.getResources().getDisplayMetrics().widthPixels;
+        mValues = dip2px(mContext,180);
+
     }
 
 
@@ -229,7 +234,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("当前type =","1");
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
             ViewGroup.LayoutParams params = image1.getLayoutParams();
-            params.height=45;
+            params.height=mValues;
+            params.width = mWid;
             image1.setLayoutParams(params);
         }
     }
@@ -244,7 +250,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("当前type =","2");
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
             ViewGroup.LayoutParams params = image1.getLayoutParams();
-            params.height=45;
+            params.height=mValues;
+            params.width = mWid;
             image1.setLayoutParams(params);
         }
     }
@@ -259,7 +266,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("当前type =","3");
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
             ViewGroup.LayoutParams params = image1.getLayoutParams();
-            params.height=45;
+            params.height=mValues;
+            params.width = mWid;
             image1.setLayoutParams(params);
         }
     }
@@ -275,15 +283,16 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
             ViewGroup.LayoutParams params = image1.getLayoutParams();
-            params.height=45;
+            params.height=mValues;
+            params.width = mWid;
             image1.setLayoutParams(params);
 
 
 
-
-            ViewGroup.LayoutParams params2 = image2.getLayoutParams();
-            params2.height=45;
             image2 = (CompactImageView) itemView.findViewById(R.id.image1);
+            ViewGroup.LayoutParams params2 = image2.getLayoutParams();
+            params2.height=mValues;
+            params2.width = mWid;
             image2.setLayoutParams(params2);
         }
     }
@@ -309,17 +318,18 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("当前type =","6");
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
             image2 = (CompactImageView) itemView.findViewById(R.id.image1);
-            image1 = (CompactImageView) itemView.findViewById(R.id.image);
+
             ViewGroup.LayoutParams params = image1.getLayoutParams();
-            params.height=45;
+            params.height=mValues;
+            params.width = mWid;
             image1.setLayoutParams(params);
 
 
 
-
-            ViewGroup.LayoutParams params2 = image2.getLayoutParams();
-            params2.height=45;
             image2 = (CompactImageView) itemView.findViewById(R.id.image1);
+            ViewGroup.LayoutParams params2 = image2.getLayoutParams();
+            params.height=mValues;
+            params.width = mWid;
             image2.setLayoutParams(params2);
 
         }
@@ -334,6 +344,15 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("总创建对象",count+"");
             Log.d("当前type =","7");
         }
+    }
+
+
+    /**
+     * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
+     */
+    public  int dip2px(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
     }
 
 }

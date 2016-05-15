@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         if (!ImageLoaderCompact.getInstance().isInitialized()) {
             ImageLoaderCompact.getInstance().onStart();
-        }
+         }
+
+
            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.view);
 //        recyclerView.getRecycledViewPool();
 //        recyclerView.setItemViewCacheSize(Integer.MAX_VALUE);
