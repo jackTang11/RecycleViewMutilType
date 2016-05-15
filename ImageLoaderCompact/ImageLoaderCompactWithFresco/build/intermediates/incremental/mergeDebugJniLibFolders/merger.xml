@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/apple/Desktop/work/demo/SinaWidgetDemo-master/RecycleViewTest/ImageLoaderCompact/ImageLoaderCompactWithFresco/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/apple/Desktop/work/demo/SinaWidgetDemo-master/RecycleViewTest/ImageLoaderCompact/ImageLoaderCompactWithFresco/build-types/debug/jniLibs"/></dataSet></merger>
