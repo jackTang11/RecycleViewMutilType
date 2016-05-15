@@ -1,0 +1,2 @@
+# RecycleViewMutilType
+利用RecycleView实现多item,测试复用
