@@ -179,18 +179,18 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Message message = mMessages.get(position);
         switch (message.type) {
             case 1:
-                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder1)holder).image1);
                 break;
             case 2:
-                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder2)holder).image1);
                 break;
             case 3:
-                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder3)holder).image1);
 
                 break;
             case 4:
-                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
-                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image2);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder4)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder4)holder).image2);
 //                Picasso.with(mContext).load(message.path).into(((ViewHolder4)holder).image1);
 //                Picasso.with(mContext).load(message.path).into(((ViewHolder4)holder).image2);
                 break;

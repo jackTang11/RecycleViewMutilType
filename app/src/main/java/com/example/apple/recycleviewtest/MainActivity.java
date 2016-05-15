@@ -6,12 +6,17 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 
+import com.android.imageloadercompact.ImageLoaderCompact;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (!ImageLoaderCompact.getInstance().isInitialized()) {
+            ImageLoaderCompact.getInstance().onStart();
+        }
            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.view);
 //        recyclerView.getRecycledViewPool();
 //        recyclerView.setItemViewCacheSize(Integer.MAX_VALUE);
