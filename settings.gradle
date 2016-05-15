@@ -1,1 +1,3 @@
 include ':app'
+include ':ImageLoaderCompact:ImageLoaderCompactWithFresco'
+include ':ImageLoaderCompact:ImageLoaderCompactWithGlide'

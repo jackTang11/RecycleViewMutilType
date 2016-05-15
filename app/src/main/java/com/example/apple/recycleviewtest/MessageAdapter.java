@@ -5,9 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
+import com.android.imageloadercompact.CompactImageView;
+import com.android.imageloadercompact.ImageLoaderCompact;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,17 +38,19 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         this.mContext =context;
         //type==1
         Random random =new Random();
-        for (int i = 0; i <10 ; i++) {
+        for (int i = 0; i <7 ; i++) {
             Message msg = new Message();
             msg.type=1;
-            msg.path =paths[random.nextInt(9)];
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
             mMessages.add(msg);
         }
         //type==2
         for (int i = 0; i <10 ; i++) {
             Message msg = new Message();
             msg.type=2;
-            msg.path =paths[random.nextInt(9)];
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
             mMessages.add(msg);
         }
 
@@ -58,7 +60,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         for (int i = 0; i <10 ; i++) {
             Message msg = new Message();
             msg.type=4;
-            msg.path =paths[random.nextInt(9)];
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
             mMessages.add(msg);
         }
 
@@ -66,7 +69,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         for (int i = 0; i <10 ; i++) {
             Message msg = new Message();
             msg.type=3;
-            msg.path =paths[random.nextInt(9)];
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
             mMessages.add(msg);
         }
 
@@ -74,7 +78,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         for (int i = 0; i <10 ; i++) {
             Message msg = new Message();
             msg.type=6;
-            msg.path =paths[random.nextInt(9)];
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
             mMessages.add(msg);
         }
 
@@ -82,7 +87,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         for (int i = 0; i <10 ; i++) {
             Message msg = new Message();
             msg.type=5;
-            msg.path =paths[random.nextInt(9)];
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
             mMessages.add(msg);
         }
 
@@ -92,17 +98,37 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         for (int i = 0; i <10 ; i++) {
             Message msg = new Message();
             msg.type=7;
-            msg.path =paths[random.nextInt(9)];
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
+            mMessages.add(msg);
+        }
+
+
+        //type==4
+        for (int i = 0; i <10 ; i++) {
+            Message msg = new Message();
+            msg.type=4;
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
+            mMessages.add(msg);
+        }
+
+        //type==3
+        for (int i = 0; i <10 ; i++) {
+            Message msg = new Message();
+            msg.type=3;
+            msg.path= paths[i];
+//            msg.path =paths[random.nextInt(9)];
             mMessages.add(msg);
         }
 
         //type==5
-        for (int i = 0; i <50 ; i++) {
-            Message msg = new Message();
-            msg.type=random.nextInt(6)+1;
-            msg.path =paths[random.nextInt(9)];
-            mMessages.add(msg);
-        }
+//        for (int i = 0; i <50 ; i++) {
+//            Message msg = new Message();
+//            msg.type=random.nextInt(6)+1;
+//            msg.path =paths[random.nextInt(9)];
+//            mMessages.add(msg);
+//        }
     }
 
 
@@ -153,23 +179,28 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Message message = mMessages.get(position);
         switch (message.type) {
             case 1:
-                Picasso.with(mContext).load(message.path).into(((ViewHolder1)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
                 break;
             case 2:
-                Picasso.with(mContext).load(message.path).into(((ViewHolder2)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
                 break;
             case 3:
-                Picasso.with(mContext).load(message.path).into(((ViewHolder3)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
+
                 break;
             case 4:
-                Picasso.with(mContext).load(message.path).into(((ViewHolder4)holder).image1);
-                Picasso.with(mContext).load(message.path).into(((ViewHolder4)holder).image2);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image2);
+//                Picasso.with(mContext).load(message.path).into(((ViewHolder4)holder).image1);
+//                Picasso.with(mContext).load(message.path).into(((ViewHolder4)holder).image2);
                 break;
             case 5:
                 break;
             case 6:
-                Picasso.with(mContext).load(message.path).into(((ViewHolder6)holder).image1);
-                Picasso.with(mContext).load(message.path).into(((ViewHolder6)holder).image2);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image1);
+                ImageLoaderCompact.getInstance().displayImage(message.path,((ViewHolder6)holder).image2);
+//                Picasso.with(mContext).load(message.path).into(((ViewHolder6)holder).image1);
+//                Picasso.with(mContext).load(message.path).into(((ViewHolder6)holder).image2);
                 break;
             case 7:
                 break;
@@ -190,57 +221,57 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     int count =0;
     public class ViewHolder1 extends RecyclerView.ViewHolder {
-        private ImageView image1;
+        private CompactImageView image1;
 
         public ViewHolder1(View itemView) {
             super(itemView);
             count++;
             Log.d("总创建对象",count+"");
             Log.d("当前type =","1");
-            image1 = (ImageView) itemView.findViewById(R.id.image);
+            image1 = (CompactImageView) itemView.findViewById(R.id.image);
         }
     }
 
     public class ViewHolder2 extends RecyclerView.ViewHolder {
-        private ImageView image1;
+        private CompactImageView image1;
 
         public ViewHolder2(View itemView) {
             super(itemView);
             count++;
             Log.d("总创建对象",count+"");
             Log.d("当前type =","2");
-            image1 = (ImageView) itemView.findViewById(R.id.image);
+            image1 = (CompactImageView) itemView.findViewById(R.id.image);
         }
     }
 
     public class ViewHolder3 extends RecyclerView.ViewHolder {
-        private ImageView image1;
+        private CompactImageView image1;
 
         public ViewHolder3(View itemView) {
             super(itemView);
             count++;
             Log.d("总创建对象",count+"");
             Log.d("当前type =","3");
-            image1 = (ImageView) itemView.findViewById(R.id.image);
+            image1 = (CompactImageView) itemView.findViewById(R.id.image);
         }
     }
 
     public class ViewHolder4 extends RecyclerView.ViewHolder {
-        private ImageView image1;
-        private ImageView image2;
+        private CompactImageView image1;
+        private CompactImageView image2;
         public ViewHolder4(View itemView) {
             super(itemView);
             count++;
             Log.d("总创建对象",count+"");
             Log.d("当前type =","4");
-            image1 = (ImageView) itemView.findViewById(R.id.image);
-            image2 = (ImageView) itemView.findViewById(R.id.image1);
+            image1 = (CompactImageView) itemView.findViewById(R.id.image);
+            image2 = (CompactImageView) itemView.findViewById(R.id.image1);
         }
     }
 
     public class ViewHolder5 extends RecyclerView.ViewHolder {
-        private ImageView image1;
-        private ImageView image2;
+        private CompactImageView image1;
+        private CompactImageView image2;
         public ViewHolder5(View itemView) {
             super(itemView);
             count++;
@@ -250,21 +281,21 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public class ViewHolder6 extends RecyclerView.ViewHolder {
-        private ImageView image1;
-        private ImageView image2;
+        private CompactImageView image1;
+        private CompactImageView image2;
         public ViewHolder6(View itemView) {
             super(itemView);
             count++;
             Log.d("总创建对象",count+"");
             Log.d("当前type =","6");
-            image1 = (ImageView) itemView.findViewById(R.id.image);
-            image2 = (ImageView) itemView.findViewById(R.id.image1);
+            image1 = (CompactImageView) itemView.findViewById(R.id.image);
+            image2 = (CompactImageView) itemView.findViewById(R.id.image1);
         }
     }
 
     public class ViewHolder7 extends RecyclerView.ViewHolder {
-        private ImageView image1;
-        private ImageView image2;
+        private CompactImageView image1;
+        private CompactImageView image2;
         public ViewHolder7(View itemView) {
             super(itemView);
             count++;

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ImageLoaderCompact/ImageLoaderCompact.iml" filepath="$PROJECT_DIR$/ImageLoaderCompact/ImageLoaderCompact.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageLoaderCompact/ImageLoaderCompactWithFresco/ImageLoaderCompactWithFresco.iml" filepath="$PROJECT_DIR$/ImageLoaderCompact/ImageLoaderCompactWithFresco/ImageLoaderCompactWithFresco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageLoaderCompact/ImageLoaderCompactWithGlide/ImageLoaderCompactWithGlide.iml" filepath="$PROJECT_DIR$/ImageLoaderCompact/ImageLoaderCompactWithGlide/ImageLoaderCompactWithGlide.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecycleViewTest.iml" filepath="$PROJECT_DIR$/RecycleViewTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

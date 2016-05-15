@@ -19,10 +19,31 @@ android {
     }
 }
 
+
+android.applicationVariants.all { variant ->
+    variant.each {
+        buildConfigField "boolean", "useFresco", "true"
+    }
+    def apk = variant.outputs[0].outputFile;
+    def dir = System.getProperty("user.dir");
+    variant.outputs[0].outputFile = new File(dir + "/ExportApks", "jk" + "_" + android.defaultConfig.versionCode + ".apk");
+}
+
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.3.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+
+    String useCompactFresco = "${USE_COMPACT_FRESCO}"
+    if ("true".equals(useCompactFresco)) {
+        compile project(':ImageLoaderCompact:ImageLoaderCompactWithFresco')
+    }
+    String useCompactGlide = "${USE_COMPACT_GLIDE}"
+    if ("true".equals(useCompactGlide)) {
+        compile project(':ImageLoaderCompact:ImageLoaderCompactWithGlide')
+    }
 }
