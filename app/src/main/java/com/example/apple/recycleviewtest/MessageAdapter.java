@@ -204,7 +204,6 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 break;
             case 7:
                 break;
-
         }
     }
 
@@ -229,6 +228,9 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("总创建对象",count+"");
             Log.d("当前type =","1");
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
+            ViewGroup.LayoutParams params = image1.getLayoutParams();
+            params.height=45;
+            image1.setLayoutParams(params);
         }
     }
 
@@ -241,6 +243,9 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("总创建对象",count+"");
             Log.d("当前type =","2");
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
+            ViewGroup.LayoutParams params = image1.getLayoutParams();
+            params.height=45;
+            image1.setLayoutParams(params);
         }
     }
 
@@ -253,6 +258,9 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("总创建对象",count+"");
             Log.d("当前type =","3");
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
+            ViewGroup.LayoutParams params = image1.getLayoutParams();
+            params.height=45;
+            image1.setLayoutParams(params);
         }
     }
 
@@ -264,8 +272,19 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             count++;
             Log.d("总创建对象",count+"");
             Log.d("当前type =","4");
+
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
+            ViewGroup.LayoutParams params = image1.getLayoutParams();
+            params.height=45;
+            image1.setLayoutParams(params);
+
+
+
+
+            ViewGroup.LayoutParams params2 = image2.getLayoutParams();
+            params2.height=45;
             image2 = (CompactImageView) itemView.findViewById(R.id.image1);
+            image2.setLayoutParams(params2);
         }
     }
 
@@ -290,6 +309,19 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Log.d("当前type =","6");
             image1 = (CompactImageView) itemView.findViewById(R.id.image);
             image2 = (CompactImageView) itemView.findViewById(R.id.image1);
+            image1 = (CompactImageView) itemView.findViewById(R.id.image);
+            ViewGroup.LayoutParams params = image1.getLayoutParams();
+            params.height=45;
+            image1.setLayoutParams(params);
+
+
+
+
+            ViewGroup.LayoutParams params2 = image2.getLayoutParams();
+            params2.height=45;
+            image2 = (CompactImageView) itemView.findViewById(R.id.image1);
+            image2.setLayoutParams(params2);
+
         }
     }
 

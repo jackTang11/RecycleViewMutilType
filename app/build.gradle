@@ -17,6 +17,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    android {
+        packagingOptions {
+            exclude 'META-INF/DEPENDENCIES.txt'
+            exclude 'META-INF/LICENSE.txt'
+            exclude 'META-INF/NOTICE.txt'
+            exclude 'META-INF/NOTICE'
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/DEPENDENCIES'
+            exclude 'META-INF/notice.txt'
+            exclude 'META-INF/license.txt'
+            exclude 'META-INF/dependencies.txt'
+            exclude 'META-INF/LGPL2.1'
+            exclude 'lib/arm64-v8a/libbitmaps.so'
+            exclude 'lib/arm64-v8a/libgifimage.so'
+            exclude 'lib/arm64-v8a/libimagepipeline.so'
+            exclude 'lib/arm64-v8a/libmemchunk.so'
+            exclude 'lib/arm64-v8a/libwebp.so'
+            exclude 'lib/arm64-v8a/libwebpimage.so'
+            exclude 'lib/x86_64/libbitmaps.so'
+            exclude 'lib/x86_64/libgifimage.so'
+            exclude 'lib/x86_64/libimagepipeline.so'
+            exclude 'lib/x86_64/libmemchunk.so'
+            exclude 'lib/x86_64/libwebp.so'
+            exclude 'lib/x86_64/libwebpimage.so'
+        }
+    }
+
 }
 
 
@@ -27,7 +55,11 @@ android.applicationVariants.all { variant ->
     def apk = variant.outputs[0].outputFile;
     def dir = System.getProperty("user.dir");
     variant.outputs[0].outputFile = new File(dir + "/ExportApks", "jk" + "_" + android.defaultConfig.versionCode + ".apk");
+
+
+
 }
+
 
 
 dependencies {
